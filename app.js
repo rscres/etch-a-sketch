@@ -23,10 +23,11 @@ const colorChange = window.addEventListener('mouseover', function(e){
     }
 });
 
+
 const sizeButton = document.querySelector('#size');
 sizeButton.addEventListener('click', function(e) {
     let sizePrompt = prompt('Enter grid size(must be smaller than 100): ')
-    if (sizePrompt > 100 || sizePrompt < 0) {
+    if (sizePrompt > 100 || sizePrompt < 0 || sizePrompt == '') {
         sizePrompt = prompt('Please try again: ');
     } else {
         let size = sizePrompt;
@@ -38,3 +39,11 @@ sizeButton.addEventListener('click', function(e) {
         squareCreator(size);
     }
 });
+
+const resetButton = document.querySelector('#reset');
+resetButton.addEventListener('click', function(e) {
+    const squares = document.querySelectorAll('.box');
+    for (square of squares) {
+        square.style.backgroundColor = 'white';
+    }
+})
