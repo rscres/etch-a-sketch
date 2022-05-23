@@ -1,0 +1,30 @@
+body {
+    background-color: lightgray;
+    padding: 10px;
+}
+#container {
+    background-color: white;
+    display: grid;
+    width: 800px;
+    height: 800px;
+    box-shadow: 5px 10px 10px 10px grey;
+}
+
+.box {
+    width: auto;
+    height:auto ;
+    margin: 0px;
+}
+
+button {
+    border-radius: 0px;
+    border-style: none;
+    background-color: whitesmoke;
+    margin-top: 25px;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: rgba(245, 245, 245, 0.76);
+}
+
