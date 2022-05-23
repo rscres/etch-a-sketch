@@ -1,6 +1,5 @@
 function squareCreator() {
     const container = document.querySelector('#container');
-    console.log(container);
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
             let square = document.createElement('div');
@@ -13,3 +12,9 @@ function squareCreator() {
 };
 
 squareCreator();
+
+const colorChange = window.addEventListener('mouseover', function(e){
+    console.log(e.target);
+    const box = e.target
+    box.style.backgroundColor = 'black';
+})
