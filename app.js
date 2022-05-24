@@ -15,11 +15,18 @@ function squareCreator(size = 16) {
 
 squareCreator();
 
+let down = false;
+document.addEventListener('mousedown', () => down = true); 
+document.addEventListener('mouseup', () => down = false);
 
+console.log(down)
 const colorChange = window.addEventListener('mouseover', function(e){
-    if (e.target.className == 'box') {
+    console.log(down);
+    if (e.target.className == 'box' && down == true) {
         const box = e.target
         box.style.backgroundColor = 'black';
+    } else {
+        return
     }
 });
 
@@ -27,7 +34,7 @@ const colorChange = window.addEventListener('mouseover', function(e){
 const sizeButton = document.querySelector('#size');
 sizeButton.addEventListener('click', function(e) {
     let sizePrompt = prompt('Enter grid size(must be smaller than 100): ')
-    if (sizePrompt > 100 || sizePrompt < 0 || sizePrompt == '') {
+    if (sizePrompt > 100 || sizePrompt < 0 || sizePrompt == null) {
         sizePrompt = prompt('Please try again: ');
     } else {
         let size = sizePrompt;
