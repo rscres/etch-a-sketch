@@ -50,7 +50,7 @@ const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', function(e) {
     const squares = document.querySelectorAll('.box');
     for (square of squares) {
-        square.style.backgroundColor = 'white';
+        square.style.backgroundColor = '';
     }
 });
 

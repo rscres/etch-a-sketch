@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightgray;
+    background-color: rgb(245, 96, 86);
     padding: 10px;
 }
 
@@ -11,25 +11,33 @@ body {
 }
 
 #container {
-    background-color: white;
+    background-color: beige;
     display: grid;
     width: 800px;
     height: 800px;
-    box-shadow: 5px 10px 10px 10px grey;
+    box-shadow: 5px 5px 5px 5px grey inset;
     user-select: none;
 }
 
 .box {
     width: auto;
-    height:auto ;
+    height: auto;
     margin: 0px;
 }
 
+#settings {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 0.20fr);
+    grid-row: 1 / span 3;
+    grid-gap: 0.5rem
+}    
+
 button {
     border-radius: 0px;
-    border-style: none;
+    border-style: solid;
+    border-width: 1px;
     background-color: whitesmoke;
-    margin-top: 25px;
     font-size: 1.2rem;
     width: 140px;
     height: 35px;
