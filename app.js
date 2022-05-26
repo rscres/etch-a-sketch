@@ -21,10 +21,10 @@ document.addEventListener('mouseup', () => down = false);
 
 console.log(down)
 const colorChange = window.addEventListener('mouseover', function(e){
-    console.log(down);
+    e.preventDefault();
     if (e.target.className == 'box' && down == true) {
         const box = e.target
-        box.style.backgroundColor = 'black';
+        box.style.backgroundColor = color;
     } else {
         return
     }
@@ -38,7 +38,6 @@ sizeButton.addEventListener('click', function(e) {
         sizePrompt = prompt('Please try again: ');
     } else {
         let size = sizePrompt;
-        console.log(size);
         let squares = document.querySelectorAll('#box');
         while (container.firstChild) {
             container.removeChild(container.firstChild);
@@ -53,4 +52,19 @@ resetButton.addEventListener('click', function(e) {
     for (square of squares) {
         square.style.backgroundColor = 'white';
     }
-})
+});
+
+
+let color = `rgb(0, 0, 0)`;
+ 
+const randomColorBtn = document.querySelector('#randomColor');
+randomColorBtn.addEventListener('click', function() {
+    let colorNum = [];
+    for (let i = 0; i < 3; i++) {
+        colorNum[i] = Math.floor(Math.random() * 256);
+    }
+    color = `rgb(${colorNum[0]}, ${colorNum[1]}, ${colorNum[2]})`;
+});
+
+const blackButton = document.querySelector('#black');
+blackButton.addEventListener('click', () => color = 'rgb(0, 0, 0)');

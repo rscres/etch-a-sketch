@@ -1,13 +1,22 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: lightgray;
     padding: 10px;
 }
+
+#settings {
+    width: 750px;
+}
+
 #container {
     background-color: white;
     display: grid;
     width: 800px;
     height: 800px;
     box-shadow: 5px 10px 10px 10px grey;
+    user-select: none;
 }
 
 .box {
@@ -22,9 +31,12 @@ button {
     background-color: whitesmoke;
     margin-top: 25px;
     font-size: 1.2rem;
+    width: 140px;
+    height: 35px;
 }
 
 button:hover {
     background-color: rgba(245, 245, 245, 0.76);
+    color: rgb(27, 27, 231);
 }
 
