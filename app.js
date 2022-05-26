@@ -1,5 +1,7 @@
 const container = document.querySelector('#container');
 
+
+//Drawing grid 
 function squareCreator(size = 16) {
     container.style.gridArea= `1 / span ${size}`;
     for (let i = 0; i < size; i++) {
@@ -15,11 +17,11 @@ function squareCreator(size = 16) {
 
 squareCreator();
 
+//Drawing event and mouse press checker
 let down = false;
 document.addEventListener('mousedown', () => down = true); 
 document.addEventListener('mouseup', () => down = false);
 
-console.log(down)
 const colorChange = window.addEventListener('mouseover', function(e){
     e.preventDefault();
     if (e.target.className == 'box' && down == true) {
@@ -31,6 +33,7 @@ const colorChange = window.addEventListener('mouseover', function(e){
 });
 
 
+//Grid size button
 const sizeButton = document.querySelector('#size');
 sizeButton.addEventListener('click', function(e) {
     let sizePrompt = prompt('Enter grid size(must be smaller than 100): ')
@@ -46,6 +49,8 @@ sizeButton.addEventListener('click', function(e) {
     }
 });
 
+
+//Clear grid button
 const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', function(e) {
     const squares = document.querySelectorAll('.box');
@@ -56,7 +61,9 @@ resetButton.addEventListener('click', function(e) {
 
 
 let color = `rgb(0, 0, 0)`;
- 
+
+
+//random color selection button 
 const randomColorBtn = document.querySelector('#randomColor');
 randomColorBtn.addEventListener('click', function() {
     let colorNum = [];
@@ -66,5 +73,7 @@ randomColorBtn.addEventListener('click', function() {
     color = `rgb(${colorNum[0]}, ${colorNum[1]}, ${colorNum[2]})`;
 });
 
+
+//black color selection button
 const blackButton = document.querySelector('#black');
 blackButton.addEventListener('click', () => color = 'rgb(0, 0, 0)');
